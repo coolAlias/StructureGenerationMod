@@ -23,8 +23,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
-import coolalias.structuregen.api.util.LogHelper;
-import coolalias.structuregen.api.util.Structure;
+import coolalias.structuregenapi.util.LogHelper;
+import coolalias.structuregenapi.util.Structure;
 import coolalias.structuregenmod.lib.SGTKeyBindings;
 
 public abstract class ItemStructureSpawnerBase extends BaseModItem

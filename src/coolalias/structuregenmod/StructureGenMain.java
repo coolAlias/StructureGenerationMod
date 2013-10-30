@@ -19,21 +19,21 @@ package coolalias.structuregenmod;
 
 import java.io.File;
 
-import coolalias.structuregen.api.util.LogHelper;
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.Configuration;
+import coolalias.structuregenapi.util.LogHelper;
 import coolalias.structuregenmod.handlers.SGTPacketHandler;
 import coolalias.structuregenmod.items.ItemStructureSpawner;
 import coolalias.structuregenmod.lib.ModInfo;
 import coolalias.structuregenmod.lib.SGTKeyBindings;
 import coolalias.structuregenmod.proxy.CommonProxy;
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.Configuration;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;

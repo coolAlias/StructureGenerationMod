@@ -10,7 +10,7 @@ import java.util.logging.Level;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.network.INetworkManager;
 import net.minecraft.network.packet.Packet250CustomPayload;
-import coolalias.structuregen.api.util.LogHelper;
+import coolalias.structuregenapi.util.LogHelper;
 import coolalias.structuregenmod.items.ItemStructureSpawnerBase;
 import coolalias.structuregenmod.lib.ModInfo;
 import cpw.mods.fml.common.network.IPacketHandler;

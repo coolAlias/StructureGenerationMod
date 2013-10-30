@@ -34,8 +34,8 @@ import net.minecraftforge.event.ForgeSubscribe;
 
 import org.lwjgl.opengl.GL11;
 
-import coolalias.structuregen.api.util.LogHelper;
-import coolalias.structuregen.api.util.Structure;
+import coolalias.structuregenapi.util.LogHelper;
+import coolalias.structuregenapi.util.Structure;
 import coolalias.structuregenmod.items.ItemStructureSpawnerBase;
 
 public class SGTBlockHighlightHandler

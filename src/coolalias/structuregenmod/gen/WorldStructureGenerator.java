@@ -3,13 +3,10 @@ package coolalias.structuregenmod.gen;
 import java.util.Random;
 import java.util.logging.Level;
 
-import coolalias.structuregen.api.util.LogHelper;
-import coolalias.structuregen.api.util.Structure;
-import cpw.mods.fml.common.IWorldGenerator;
-import net.minecraft.block.Block;
-import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
+import coolalias.structuregenapi.util.LogHelper;
+import cpw.mods.fml.common.IWorldGenerator;
 
 public class WorldStructureGenerator implements IWorldGenerator
 {

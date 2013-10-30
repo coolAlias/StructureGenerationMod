@@ -26,11 +26,10 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
-import coolalias.structuregen.api.StructureGenerator;
-import coolalias.structuregen.api.util.LinkedStructureGenerator;
-import coolalias.structuregen.api.util.LogHelper;
-import coolalias.structuregen.api.util.Structure;
-import coolalias.structuregen.api.util.StructureGeneratorBase;
+import coolalias.structuregenapi.StructureGenerator;
+import coolalias.structuregenapi.util.LogHelper;
+import coolalias.structuregenapi.util.Structure;
+import coolalias.structuregenapi.util.StructureGeneratorBase;
 import coolalias.structuregenmod.gen.ModStructureGenerator;
 
 public class ItemStructureSpawner extends ItemStructureSpawnerBase
@@ -113,7 +112,7 @@ public class ItemStructureSpawner extends ItemStructureSpawnerBase
 			*/
 			
 			// Necessary for SMP compatibility, as using static variables will fail
-			StructureGeneratorBase gen = new StructureGenerator();
+			StructureGeneratorBase gen = new ModStructureGenerator();
 			Structure structure = getCurrentStructure(itemstack);
 			
 			if (structure == null) {
