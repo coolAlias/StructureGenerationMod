@@ -15,7 +15,7 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package coolalias.structuregen.mod.lib;
+package coolalias.structuregenmod.lib;
 
 public class CustomHooks {
 	/**

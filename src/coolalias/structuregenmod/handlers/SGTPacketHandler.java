@@ -1,4 +1,4 @@
-package coolalias.structuregen.mod.handlers;
+package coolalias.structuregenmod.handlers;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -11,8 +11,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.network.INetworkManager;
 import net.minecraft.network.packet.Packet250CustomPayload;
 import coolalias.structuregen.api.util.LogHelper;
-import coolalias.structuregen.mod.items.ItemStructureSpawnerBase;
-import coolalias.structuregen.mod.lib.ModInfo;
+import coolalias.structuregenmod.items.ItemStructureSpawnerBase;
+import coolalias.structuregenmod.lib.ModInfo;
 import cpw.mods.fml.common.network.IPacketHandler;
 import cpw.mods.fml.common.network.PacketDispatcher;
 import cpw.mods.fml.common.network.Player;

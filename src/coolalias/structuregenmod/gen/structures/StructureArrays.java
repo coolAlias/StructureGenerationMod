@@ -15,11 +15,11 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package coolalias.structuregen.mod.gen.structures;
+package coolalias.structuregenmod.gen.structures;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
-import coolalias.structuregen.mod.lib.CustomHooks;
+import coolalias.structuregenmod.lib.CustomHooks;
 
 public class StructureArrays
 {

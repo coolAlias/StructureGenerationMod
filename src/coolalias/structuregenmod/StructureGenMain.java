@@ -15,16 +15,16 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package coolalias.structuregen.mod;
+package coolalias.structuregenmod;
 
 import java.io.File;
 
 import coolalias.structuregen.api.util.LogHelper;
-import coolalias.structuregen.mod.handlers.SGTPacketHandler;
-import coolalias.structuregen.mod.items.ItemStructureSpawner;
-import coolalias.structuregen.mod.lib.ModInfo;
-import coolalias.structuregen.mod.lib.SGTKeyBindings;
-import coolalias.structuregen.mod.proxy.CommonProxy;
+import coolalias.structuregenmod.handlers.SGTPacketHandler;
+import coolalias.structuregenmod.items.ItemStructureSpawner;
+import coolalias.structuregenmod.lib.ModInfo;
+import coolalias.structuregenmod.lib.SGTKeyBindings;
+import coolalias.structuregenmod.proxy.CommonProxy;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

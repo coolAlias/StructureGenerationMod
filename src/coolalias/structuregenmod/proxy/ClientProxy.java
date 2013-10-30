@@ -15,23 +15,15 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package coolalias.structuregen.mod.items;
+package coolalias.structuregenmod.proxy;
 
-import coolalias.structuregen.mod.lib.ModInfo;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.item.Item;
+import net.minecraftforge.common.MinecraftForge;
+import coolalias.structuregenmod.handlers.SGTBlockHighlightHandler;
 
-public class BaseModItem extends Item {
-
-	public BaseModItem(int par1) {
-		super(par1);
-	}
-
+public class ClientProxy extends CommonProxy
+{
 	@Override
-	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister iconRegister) {
-		this.itemIcon = iconRegister.registerIcon(ModInfo.MOD_ID + ":" + this.getUnlocalizedName().substring(5).toLowerCase());
+	public void registerRenderers() {
+		MinecraftForge.EVENT_BUS.register(new SGTBlockHighlightHandler());
 	}
 }

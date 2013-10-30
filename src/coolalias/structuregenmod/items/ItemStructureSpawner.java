@@ -15,7 +15,7 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package coolalias.structuregen.mod.items;
+package coolalias.structuregenmod.items;
 
 import java.util.List;
 import java.util.logging.Level;
@@ -31,7 +31,7 @@ import coolalias.structuregen.api.util.LinkedStructureGenerator;
 import coolalias.structuregen.api.util.LogHelper;
 import coolalias.structuregen.api.util.Structure;
 import coolalias.structuregen.api.util.StructureGeneratorBase;
-import coolalias.structuregen.mod.gen.ModStructureGenerator;
+import coolalias.structuregenmod.gen.ModStructureGenerator;
 
 public class ItemStructureSpawner extends ItemStructureSpawnerBase
 {

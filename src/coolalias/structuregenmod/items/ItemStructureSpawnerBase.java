@@ -15,7 +15,7 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package coolalias.structuregen.mod.items;
+package coolalias.structuregenmod.items;
 
 import java.util.logging.Level;
 
@@ -25,7 +25,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 import coolalias.structuregen.api.util.LogHelper;
 import coolalias.structuregen.api.util.Structure;
-import coolalias.structuregen.mod.lib.SGTKeyBindings;
+import coolalias.structuregenmod.lib.SGTKeyBindings;
 
 public abstract class ItemStructureSpawnerBase extends BaseModItem
 {

@@ -15,25 +15,15 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package coolalias.structuregen.mod.proxy;
+package coolalias.structuregenmod.lib;
 
-import cpw.mods.fml.common.network.IGuiHandler;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.world.World;
-
-public class CommonProxy implements IGuiHandler
+public class ModInfo
 {
-	public void registerRenderers() {}
-
-	@Override
-	public Object getServerGuiElement(int guiId, EntityPlayer player, World world, int x, int y, int z)
-	{
-		return null;
-	}
-
-	@Override
-	public Object getClientGuiElement(int guiId, EntityPlayer player, World world, int x, int y, int z)
-	{
-		return null;
-	}
+	public static final String MOD_ID = "structuregenmod",
+			MOD_NAME = "coolAliasStructureGenMod",
+			VERSION = "1.0.0",
+			CLIENT_PROXY = "coolalias.structuregenmod.proxy.ClientProxy",
+			COMMON_PROXY = "coolalias.structuregenmod.proxy.CommonProxy",
+			CHANNEL = "SGT_MAIN",
+			LOGGER = "STRUCTURE GEN";
 }

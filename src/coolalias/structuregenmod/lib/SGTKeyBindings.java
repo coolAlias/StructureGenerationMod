@@ -15,7 +15,7 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package coolalias.structuregen.mod.lib;
+package coolalias.structuregenmod.lib;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,7 +25,7 @@ import net.minecraftforge.common.Configuration;
 
 import org.lwjgl.input.Keyboard;
 
-import coolalias.structuregen.mod.handlers.SGTKeyHandler;
+import coolalias.structuregenmod.handlers.SGTKeyHandler;
 import cpw.mods.fml.client.registry.KeyBindingRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

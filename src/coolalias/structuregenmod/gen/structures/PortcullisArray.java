@@ -17,7 +17,7 @@
     Original design by PearSquirrel: http://www.youtube.com/watch?feature=player_embedded&v=9pG91IfoyAw
  */
 
-package coolalias.structuregen.mod.gen.structures;
+package coolalias.structuregenmod.gen.structures;
 
 import net.minecraft.block.Block;
 

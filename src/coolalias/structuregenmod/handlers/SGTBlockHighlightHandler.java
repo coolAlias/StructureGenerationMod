@@ -21,7 +21,7 @@
 	found at https://github.com/pahimar/Equivalent-Exchange-3/blob/master/common/com/pahimar/ee3/core/handlers/DrawBlockHighlightHandler.java
  */
 
-package coolalias.structuregen.mod.handlers;
+package coolalias.structuregenmod.handlers;
 
 import java.util.logging.Level;
 
@@ -36,7 +36,7 @@ import org.lwjgl.opengl.GL11;
 
 import coolalias.structuregen.api.util.LogHelper;
 import coolalias.structuregen.api.util.Structure;
-import coolalias.structuregen.mod.items.ItemStructureSpawnerBase;
+import coolalias.structuregenmod.items.ItemStructureSpawnerBase;
 
 public class SGTBlockHighlightHandler
 {

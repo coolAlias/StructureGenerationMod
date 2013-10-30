@@ -15,16 +15,16 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package coolalias.structuregen.mod.handlers;
+package coolalias.structuregenmod.handlers;
 
 import java.util.EnumSet;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityClientPlayerMP;
 import net.minecraft.client.settings.KeyBinding;
-import coolalias.structuregen.mod.items.ItemStructureSpawnerBase;
-import coolalias.structuregen.mod.lib.ModInfo;
-import coolalias.structuregen.mod.lib.SGTKeyBindings;
+import coolalias.structuregenmod.items.ItemStructureSpawnerBase;
+import coolalias.structuregenmod.lib.ModInfo;
+import coolalias.structuregenmod.lib.SGTKeyBindings;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.client.registry.KeyBindingRegistry.KeyHandler;
 import cpw.mods.fml.common.TickType;

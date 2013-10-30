@@ -15,7 +15,7 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package coolalias.structuregen.mod.gen;
+package coolalias.structuregenmod.gen;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -31,13 +31,12 @@ import net.minecraft.world.World;
 import coolalias.structuregen.api.util.LogHelper;
 import coolalias.structuregen.api.util.Structure;
 import coolalias.structuregen.api.util.StructureGeneratorBase;
-import coolalias.structuregen.mod.PsionBasicTreeArray;
-import coolalias.structuregen.mod.gen.structures.PortcullisArray;
-import coolalias.structuregen.mod.gen.structures.StructureArrays;
-import coolalias.structuregen.mod.gen.structures.WaterMillArray1;
-import coolalias.structuregen.mod.gen.structures.WaterMillArray2;
-import coolalias.structuregen.mod.gen.structures.WaterMillArray3;
-import coolalias.structuregen.mod.lib.CustomHooks;
+import coolalias.structuregenmod.gen.structures.PortcullisArray;
+import coolalias.structuregenmod.gen.structures.StructureArrays;
+import coolalias.structuregenmod.gen.structures.WaterMillArray1;
+import coolalias.structuregenmod.gen.structures.WaterMillArray2;
+import coolalias.structuregenmod.gen.structures.WaterMillArray3;
+import coolalias.structuregenmod.lib.CustomHooks;
 
 public class ModStructureGenerator extends StructureGeneratorBase
 {
@@ -268,11 +267,6 @@ public class ModStructureGenerator extends StructureGeneratorBase
 		structure.setFacing(StructureGeneratorBase.NORTH);
 		structure.setStructureOffset(0, -2, -2);
 		structures.add(structure);
-		
-		structure = new Structure("Spawn Test");
-		structure.addBlockArray(StructureArrays.blockArraySpawnTest);
-		structure.setFacing(StructureGeneratorBase.EAST);
-		structures.add(structure);
 
 		structure = new Structure("WaterMill");
 		structure.addBlockArray(WaterMillArray1.blockArrayWaterMill);
@@ -286,71 +280,5 @@ public class ModStructureGenerator extends StructureGeneratorBase
 		structure.setFacing(StructureGeneratorBase.WEST);
 		structure.setStructureOffset(0, -6, 0);
 		structures.add(structure);
-		
-		structure = new Structure("Psion Tree Base");
-		structure.addBlockArray(PsionBasicTreeArray.psionBasicTreeTrunk);
-		structures.add(structure);
-		
-		structure = new Structure("Psion Tree Canopy");
-		structure.addBlockArray(PsionBasicTreeArray.psionBasicTreeCanopy);
-		structures.add(structure);
-		
-		/** DEBUG STRUCTURES for setDefaultOffset */
-		/*
-		structure = new Structure("3 x 4");
-		structure.addBlockArray(StructureArrays.threeByFour);
-		structure.setFacing(StructureGeneratorBase.NORTH);
-		structures.add(structure);
-		
-		structure = new Structure("4 x 3");
-		structure.addBlockArray(StructureArrays.fourByThree);
-		structure.setFacing(StructureGeneratorBase.NORTH);
-		structures.add(structure);
-		
-		structure = new Structure("2 x 6");
-		structure.addBlockArray(StructureArrays.twoBySix);
-		structure.setFacing(StructureGeneratorBase.NORTH);
-		structures.add(structure);
-		
-		structure = new Structure("6 x 2");
-		structure.addBlockArray(StructureArrays.sixByTwo);
-		structure.setFacing(StructureGeneratorBase.NORTH);
-		structures.add(structure);
-		
-		structure = new Structure("6 x 3");
-		structure.addBlockArray(StructureArrays.sixByThree);
-		structure.setFacing(StructureGeneratorBase.NORTH);
-		structures.add(structure);
-		
-		structure = new Structure("3 x 6");
-		structure.addBlockArray(StructureArrays.threeBySix);
-		structure.setFacing(StructureGeneratorBase.NORTH);
-		structures.add(structure);
-		
-		structure = new Structure("7 x 3");
-		structure.addBlockArray(StructureArrays.sevenByThree);
-		structure.setFacing(StructureGeneratorBase.NORTH);
-		structures.add(structure);
-		
-		structure = new Structure("3 x 7");
-		structure.addBlockArray(StructureArrays.threeBySeven);
-		structure.setFacing(StructureGeneratorBase.NORTH);
-		structures.add(structure);
-		
-		structure = new Structure("7 x 8");
-		structure.addBlockArray(StructureArrays.sevenByEight);
-		structure.setFacing(StructureGeneratorBase.NORTH);
-		structures.add(structure);
-		
-		structure = new Structure("8 x 7");
-		structure.addBlockArray(StructureArrays.eightBySeven);
-		structure.setFacing(StructureGeneratorBase.NORTH);
-		structures.add(structure);
-		
-		structure = new Structure("Dimension Test");
-		structure.addBlockArray(StructureArrays.dimensionTest);
-		structure.setFacing(StructureGeneratorBase.NORTH);
-		structures.add(structure);
-		*/
 	}
 }

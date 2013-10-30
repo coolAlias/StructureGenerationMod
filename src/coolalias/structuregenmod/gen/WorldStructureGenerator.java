@@ -1,4 +1,4 @@
-package coolalias.structuregen.mod.gen;
+package coolalias.structuregenmod.gen;
 
 import java.util.Random;
 import java.util.logging.Level;
