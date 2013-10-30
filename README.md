@@ -64,12 +64,16 @@ KNOWN BUGS
 
 INSTALLATION
 ============
+Requires Forge. Written for and tested with Minecraft v1.6.4 and Forge build 916.
+
 MOD
 
-1. Download the pre-compiled and zipped mod file and place it in your minecraft/mods folder. You're good to go!
+1. Download the zipped mod distributable and place it in your minecraft/mods folder. You're good to go!
 
 2. Alternatively, follow the directions below to add the 'StructureGenMod' files to your project, giving you access
 to a secondary API for easily creating new Items capable of spawning structures with all the pre-made functionality.
+
+3. If using the source code rather than the distributable, the StructureGenAPI is also required.
 
 API
 
