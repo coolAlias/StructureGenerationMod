@@ -17,6 +17,7 @@
 
 package coolalias.structuregenmod.items;
 
+import java.util.List;
 import java.util.logging.Level;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -65,60 +66,67 @@ public abstract class ItemStructureSpawnerBase extends BaseModItem
 	 */
 	
 	/**
+	 * Returns the Structure List used by this ItemStack
+	 */
+	public abstract List<Structure> getStructureList(ItemStack itemstack);
+	
+	/**
 	 * Increments the structure index and returns the new value for convenience.
 	 */
-	public abstract int nextStructure(ItemStack itemstack);
-	/*
+	public static final int nextStructure(ItemStack itemstack)
 	{
-		int index = getData(itemstack, STRUCTURE_INDEX) + 1;
-		if (index >= StructureGenerator.structures.size()) index = 0;
-		setData(itemstack, STRUCTURE_INDEX, index);
-		return index;
+		List list = ((ItemStructureSpawnerBase) itemstack.getItem()).getStructureList(itemstack);
+		
+		if (list != null) {
+			int index = getData(itemstack, STRUCTURE_INDEX) + 1;
+			if (index >= list.size()) index = 0;
+			setData(itemstack, STRUCTURE_INDEX, index);
+			return index;
+		} else {
+			return 0;
+		}
 	}
-	*/
 
 	/**
 	 * Decrements the structure index and returns the new value for convenience.
 	 */
-	public abstract int prevStructure(ItemStack itemstack);
-	/*
+	public static final int prevStructure(ItemStack itemstack)
 	{
-		int index = getData(itemstack, STRUCTURE_INDEX) - 1;
-		if (index < 0) index = StructureGenerator.structures.size() - 1;
-		setData(itemstack, STRUCTURE_INDEX, index);
-		return index;
+		List list = ((ItemStructureSpawnerBase) itemstack.getItem()).getStructureList(itemstack);
+
+		if (list != null) {
+			int index = getData(itemstack, STRUCTURE_INDEX) - 1;
+			if (index < 0) index = list.size() - 1;
+			setData(itemstack, STRUCTURE_INDEX, index);
+			return index;
+		} else {
+			return 0;
+		}
 	}
-	*/
 
 	/**
 	 * Returns the name of the structure at provided index, or "" if index out of bounds
 	 */
-	public abstract String getStructureName(ItemStack itemstack, int index);
-	/*
-	{
-		return (index < StructureGenerator.structures.size() ? StructureGenerator.structures.get(index).name : "");
+	public static final String getStructureName(ItemStack itemstack, int index) {
+		List list = ((ItemStructureSpawnerBase) itemstack.getItem()).getStructureList(itemstack);
+		return (list != null && index < list.size() ? ((Structure) list.get(index)).name : "");
 	}
-	*/
 	
 	/**
 	 * Returns index of currently selected structure
 	 */
-	public abstract int getCurrentStructureIndex(ItemStack itemstack);
-	/*
-	{
-		return getData(itemstack, STRUCTURE_INDEX) >= StructureGenerator.structures.size() ? 0 : getData(itemstack, STRUCTURE_INDEX);
+	public static final int getCurrentStructureIndex(ItemStack itemstack) {
+		List list = ((ItemStructureSpawnerBase) itemstack.getItem()).getStructureList(itemstack);
+		return getData(itemstack, STRUCTURE_INDEX) >= list.size() ? 0 : getData(itemstack, STRUCTURE_INDEX);
 	}
-	*/
 	
 	/**
 	 * Returns currently selected structure
 	 */
-	public abstract Structure getCurrentStructure(ItemStack itemstack);
-	/*
-	{
-		return StructureGenerator.structures.get(getCurrentStructureIndex(itemstack));
+	public static final Structure getCurrentStructure(ItemStack itemstack) {
+		List list = ((ItemStructureSpawnerBase) itemstack.getItem()).getStructureList(itemstack);
+		return (Structure) list.get(getCurrentStructureIndex(itemstack));
 	}
-	*/
 
 	/**
 	 * Increments the appropriate Offset and returns the new value for convenience.

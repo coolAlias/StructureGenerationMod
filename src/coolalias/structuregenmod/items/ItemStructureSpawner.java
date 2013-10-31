@@ -26,7 +26,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
-import coolalias.structuregenapi.StructureGenerator;
 import coolalias.structuregenapi.util.LogHelper;
 import coolalias.structuregenapi.util.Structure;
 import coolalias.structuregenapi.util.StructureGeneratorBase;
@@ -39,52 +38,11 @@ public class ItemStructureSpawner extends ItemStructureSpawnerBase
 		setCreativeTab(CreativeTabs.tabMisc);
 	}
 	
-	/**
-	 * Increments the structure index and returns the new value for convenience.
-	 */
 	@Override
-	public final int nextStructure(ItemStack itemstack) {
-		int index = getData(itemstack, STRUCTURE_INDEX) + 1;
-		if (index >= ModStructureGenerator.structures.size()) index = 0;
-		setData(itemstack, STRUCTURE_INDEX, index);
-		return index;
-	}
-
-	/**
-	 * Decrements the structure index and returns the new value for convenience.
-	 */
-	@Override
-	public final int prevStructure(ItemStack itemstack) {
-		int index = getData(itemstack, STRUCTURE_INDEX) - 1;
-		if (index < 0) index = ModStructureGenerator.structures.size() - 1;
-		setData(itemstack, STRUCTURE_INDEX, index);
-		return index;
-	}
-
-	/**
-	 * Returns the name of the structure at provided index, or "" if index out of bounds
-	 */
-	@Override
-	public final String getStructureName(ItemStack itemstack, int index) {
-		return (index < ModStructureGenerator.structures.size() ? ModStructureGenerator.structures.get(index).name : "");
+	public List<Structure> getStructureList(ItemStack itemstack) {
+		return ModStructureGenerator.structures;
 	}
 	
-	/**
-	 * Returns index of currently selected structure
-	 */
-	@Override
-	public final int getCurrentStructureIndex(ItemStack itemstack) {
-		return getData(itemstack, STRUCTURE_INDEX) >= ModStructureGenerator.structures.size() ? 0 : getData(itemstack, STRUCTURE_INDEX);
-	}
-	
-	/**
-	 * Returns currently selected structure
-	 */
-	@Override
-	public final Structure getCurrentStructure(ItemStack itemstack) {
-		return ModStructureGenerator.structures.get(getCurrentStructureIndex(itemstack));
-	}
-
 	@Override
 	public boolean onItemUse(ItemStack itemstack, EntityPlayer player, World world, int x, int y, int z, int par7, float par8, float par9, float par10)
 	{
