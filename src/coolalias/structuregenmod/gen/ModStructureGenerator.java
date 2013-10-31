@@ -251,7 +251,6 @@ public class ModStructureGenerator extends StructureGeneratorBase
 		structure.setFacing(StructureGeneratorBase.WEST);
 		structures.add(structure);
 		 */
-		
 		structure = new Structure("Blacksmith");
 		structure.addBlockArray(StructureArrays.blockArrayNPCBlackSmith);
 		structure.setFacing(StructureGeneratorBase.EAST);

@@ -1,0 +1,17 @@
+[
+{
+  "modid": "StructureGenMod",
+  "name": "Structure Generation Mod",
+  "description": "A mod demonstrating the capabilities of coolAlias' Structure Generation API.",
+  "version": "@@MOD_VERSION@@",
+  "mcversion": "@@MC_VERSION@@",
+  "logoFile": "",
+  "url": "",
+  "updateUrl": "",
+  "authors": ["coolAlias"],
+  "credits": "",
+  "parent": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
