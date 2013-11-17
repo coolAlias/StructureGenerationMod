@@ -51,7 +51,7 @@ public class SGTKeyBindings
 	};
 	
 	/** Maps Keyboard values to SGT KeyBinding values */
-	public static final Map<Integer, Byte> SGTKeyMap = new HashMap<Integer, Byte>();
+	public static final Map<Integer, Byte> sgtKeyMap = new HashMap<Integer, Byte>();
 	
 	public static void init(Configuration config)
 	{
@@ -62,7 +62,7 @@ public class SGTKeyBindings
 		{
 			key[i] = new KeyBinding(desc[i], config.get(SGTKeyHandler.label, desc[i], keyValues[i]).getInt());
 			repeat[i] = false;
-			SGTKeyMap.put(key[i].keyCode, (byte) i);
+			sgtKeyMap.put(key[i].keyCode, (byte) i);
 		}
 		
         KeyBindingRegistry.registerKeyBinding(new SGTKeyHandler(key, repeat));

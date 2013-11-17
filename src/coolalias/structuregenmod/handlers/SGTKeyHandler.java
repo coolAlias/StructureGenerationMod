@@ -54,12 +54,12 @@ public class SGTKeyHandler extends KeyHandler
 	@Override
 	public void keyDown(EnumSet<TickType> types, KeyBinding kb, boolean tickEnd, boolean isRepeat)
 	{
-		if (tickEnd && SGTKeyBindings.SGTKeyMap.containsKey(kb.keyCode) && FMLClientHandler.instance().getClient().inGameHasFocus)
+		if (tickEnd && SGTKeyBindings.sgtKeyMap.containsKey(kb.keyCode) && FMLClientHandler.instance().getClient().inGameHasFocus)
 		{
 			EntityClientPlayerMP player = Minecraft.getMinecraft().thePlayer;
 			
 			if (player.getHeldItem() != null && player.getHeldItem().getItem() instanceof ItemStructureSpawnerBase) {
-				SGTPacketHandler.sendPacketKeyPress(SGTKeyBindings.SGTKeyMap.get(kb.keyCode));
+				SGTPacketHandler.sendPacketKeyPress(SGTKeyBindings.sgtKeyMap.get(kb.keyCode));
 			}
 		}
 	}
