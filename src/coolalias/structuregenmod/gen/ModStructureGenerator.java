@@ -28,6 +28,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
+import coolalias.structuregenapi.util.GenHelper;
 import coolalias.structuregenapi.util.LogHelper;
 import coolalias.structuregenapi.util.Structure;
 import coolalias.structuregenapi.util.StructureGeneratorBase;
@@ -113,7 +114,7 @@ public class ModStructureGenerator extends StructureGeneratorBase
 
 		switch(fakeID) {
 		case CustomHooks.CUSTOM_CHEST:
-			// Using the pre-made method addItemToTileInventory adds items to the first slot available
+			// Using the pre-made method GenHelper.addItemToTileInventory adds items to the first slot available
 
 			// Here we use customData1 to subtype our custom chest hook:
 			if (customData1 == CustomHooks.CUSTOM_CHEST_1)
@@ -121,38 +122,38 @@ public class ModStructureGenerator extends StructureGeneratorBase
 				boolean canAdd;
 				// This takes advantage of the method's return value to determine when it's full
 				do {
-					canAdd = addItemToTileInventory(world, new ItemStack(Item.diamond, 64), x, y, z);
-					if (canAdd) canAdd = addItemToTileInventory(world, new ItemStack(Item.emerald, 64), x, y, z);
+					canAdd = GenHelper.addItemToTileInventory(world, new ItemStack(Item.diamond, 64), x, y, z);
+					if (canAdd) canAdd = GenHelper.addItemToTileInventory(world, new ItemStack(Item.emerald, 64), x, y, z);
 				} while (canAdd);
 			}
 			// Not our specific chest, so we'll do some generic stuff
 			else
 			{
 				// Here we're using customData1 for stack size to add
-				addItemToTileInventory(world, new ItemStack(Item.diamond, customData1), x, y, z);
+				GenHelper.addItemToTileInventory(world, new ItemStack(Item.diamond, customData1), x, y, z);
 
 				// Here we use customData1 to add a metadata block to the chest
-				addItemToTileInventory(world, new ItemStack(Block.cloth.blockID, 4, customData1), x, y, z);
+				GenHelper.addItemToTileInventory(world, new ItemStack(Block.cloth.blockID, 4, customData1), x, y, z);
 
 				// Here we use both customData1 and customData2 to determine item id and stack size
-				addItemToTileInventory(world, new ItemStack(customData1, customData2, 0), x, y, z);
+				GenHelper.addItemToTileInventory(world, new ItemStack(customData1, customData2, 0), x, y, z);
 
 				// Adding potions; check the wiki 'data values' for potion ids
-				addItemToTileInventory(world, new ItemStack(Item.potion,1,8206), x, y, z);
-				addItemToTileInventory(world, new ItemStack(Item.potion,1,8270), x, y, z);
-				addItemToTileInventory(world, new ItemStack(Item.potion,1,8193), x, y, z);
-				addItemToTileInventory(world, new ItemStack(Item.potion,1,16385), x, y, z);
+				GenHelper.addItemToTileInventory(world, new ItemStack(Item.potion,1,8206), x, y, z);
+				GenHelper.addItemToTileInventory(world, new ItemStack(Item.potion,1,8270), x, y, z);
+				GenHelper.addItemToTileInventory(world, new ItemStack(Item.potion,1,8193), x, y, z);
+				GenHelper.addItemToTileInventory(world, new ItemStack(Item.potion,1,16385), x, y, z);
 			}
 			break;
 		case CustomHooks.CUSTOM_DISPENSER:
-			// We're going to take advantage of addItemToTileInventory's return value to fill
+			// We're going to take advantage of GenHelper.addItemToTileInventory's return value to fill
 			// the container to the brim; note that this way is better than the for loop from
 			// above because it doesn't waste processing time - it stops as soon as it is full
 			boolean addmore = true;
 			while (addmore)
 			{
 				// Here we use customData as the itemID to place
-				addmore = addItemToTileInventory(world, new ItemStack(customData1, 64, 0), x, y, z);
+				addmore = GenHelper.addItemToTileInventory(world, new ItemStack(customData1, 64, 0), x, y, z);
 			}
 			break;
 		case CustomHooks.CUSTOM_SIGNWALL:
@@ -182,11 +183,11 @@ public class ModStructureGenerator extends StructureGeneratorBase
 				text[0] = EnumChatFormatting.BLACK + "A Sign Post";
 			}
 			// Use this easy method to add text to the sign's tile entity:
-			setSignText(world, text, x, y, z);
+			GenHelper.setSignText(world, text, x, y, z);
 			break;
 		case CustomHooks.CUSTOM_SKULL:
 			// Easily set the skull type or player name if you know it:
-			setSkullData(world, "", customData1, x, y, z);
+			GenHelper.setSkullData(world, "", customData1, x, y, z);
 			break;
 		case CustomHooks.ITEM_FRAME:
 			ItemStack frame = new ItemStack(Item.itemFrame);
@@ -194,21 +195,21 @@ public class ModStructureGenerator extends StructureGeneratorBase
 			// hanging entities and set ItemFrame items (with or without rotation)
 
 			// You need to store the returned facing from setHangingEntity to use later methods
-			int facing = setHangingEntity(world, frame, x, y, z);
+			int facing = GenHelper.setHangingEntity(world, frame, x, y, z);
 
 			// Use this method for default rotation:
-			setItemFrameStack(world, new ItemStack(customData1,1,0), x, y, z, facing);
+			GenHelper.setItemFrameStack(world, new ItemStack(customData1,1,0), x, y, z, facing);
 
 			// or this one if you want to specify rotation:
 			// setItemFrameStack(world, x, y, z, facing, new ItemStack(customData,1,0),2);
 			break;
 		case CustomHooks.PAINTING:
 			ItemStack painting = new ItemStack(Item.painting);
-			facing = setHangingEntity(world, painting, x, y, z);
+			facing = GenHelper.setHangingEntity(world, painting, x, y, z);
 			// choose painting you want based on custom data; look at EnumArt for painting names
 			String custom = (customData1 == 1 ? "Aztec" : "Bomb");
 			// use following method to set painting and update client automatically
-			setPaintingArt(world, custom, x, y, z, facing);
+			GenHelper.setPaintingArt(world, custom, x, y, z, facing);
 			break;
 		case CustomHooks.RANDOM_HOLE:
 			// One way to generate holes would be to set a random int once per structure,
@@ -227,7 +228,7 @@ public class ModStructureGenerator extends StructureGeneratorBase
 			Entity bob = new EntityVillager(world, customData1);
 
 			// Now use the preset method to avoid spawning in walls
-			spawnEntityInStructure(world, bob, x, y, z);
+			GenHelper.spawnEntityInStructure(world, bob, x, y, z);
 			break;
 		default:
 			LogHelper.log(Level.WARNING, "No custom method defined for id " + fakeID);
