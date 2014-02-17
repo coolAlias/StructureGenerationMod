@@ -1,5 +1,5 @@
 /**
-    Copyright (C) <2013> <coolAlias>
+    Copyright (C) <2014> <coolAlias>
 
     This file is part of coolAlias' Structure Generation Tool; as such,
     you can redistribute it and/or modify it under the terms of the GNU
@@ -15,23 +15,23 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package coolalias.structuregenmod.items;
+package structuregenmod.proxy;
 
-import coolalias.structuregenmod.lib.ModInfo;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.item.Item;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.world.World;
+import cpw.mods.fml.common.network.IGuiHandler;
 
-public class BaseModItem extends Item {
+public class CommonProxy implements IGuiHandler
+{
+	public void registerRenderers() {}
 
-	public BaseModItem(int par1) {
-		super(par1);
+	@Override
+	public Object getServerGuiElement(int guiId, EntityPlayer player, World world, int x, int y, int z) {
+		return null;
 	}
 
 	@Override
-	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister iconRegister) {
-		this.itemIcon = iconRegister.registerIcon(ModInfo.MOD_ID + ":" + this.getUnlocalizedName().substring(5).toLowerCase());
+	public Object getClientGuiElement(int guiId, EntityPlayer player, World world, int x, int y, int z) {
+		return null;
 	}
 }

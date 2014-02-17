@@ -1,5 +1,5 @@
 /**
-    Copyright (C) <2013> <coolAlias>
+    Copyright (C) <2014> <coolAlias>
 
     This file is part of coolAlias' Structure Generation Tool; as such,
     you can redistribute it and/or modify it under the terms of the GNU
@@ -15,11 +15,11 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package coolalias.structuregenmod.gen.structures;
+package structuregenmod.gen.structures;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
-import coolalias.structuregenmod.lib.CustomHooks;
+import structuregenmod.lib.CustomHooks;
 
 public class StructureArrays
 {

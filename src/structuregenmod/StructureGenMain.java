@@ -1,5 +1,5 @@
 /**
-    Copyright (C) <2013> <coolAlias>
+    Copyright (C) <2014> <coolAlias>
 
     This file is part of coolAlias' Structure Generation Tool; as such,
     you can redistribute it and/or modify it under the terms of the GNU
@@ -15,7 +15,7 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package coolalias.structuregenmod;
+package structuregenmod;
 
 import java.io.File;
 
@@ -23,13 +23,11 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.Configuration;
+import structuregenmod.handlers.SGTPacketHandler;
+import structuregenmod.items.ItemStructureSpawner;
+import structuregenmod.lib.ModInfo;
+import structuregenmod.proxy.CommonProxy;
 import coolalias.structuregenapi.util.LogHelper;
-import coolalias.structuregenmod.handlers.SGTPacketHandler;
-import coolalias.structuregenmod.items.ItemStructureSpawner;
-import coolalias.structuregenmod.lib.ModInfo;
-import coolalias.structuregenmod.lib.SGTKeyBindings;
-import coolalias.structuregenmod.proxy.CommonProxy;
-import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -59,27 +57,20 @@ public class StructureGenMain
 	public static Item structureSpawner;
 	
 	@EventHandler
-	public void preInit(FMLPreInitializationEvent event)
-	{
+	public void preInit(FMLPreInitializationEvent event) {
 		LogHelper.init();
-		
 		Configuration config = new Configuration(new File(event.getModConfigurationDirectory().getAbsolutePath() + "/StructureGenMod.cfg"));
         config.load();
-        
         modItemIndex = config.getItem("modItemIndex", MOD_ITEM_INDEX_DEFAULT).getInt() - 256;
-        
-        if (FMLCommonHandler.instance().getSide().isClient())
-        	SGTKeyBindings.init(config);
-        
         config.save();
 	}
 	
 	@EventHandler
-	public void load(FMLInitializationEvent event)
-	{
+	public void load(FMLInitializationEvent event) {
 		structureSpawner = new ItemStructureSpawner(modItemIndex++).setUnlocalizedName("structureSpawner");
-		GameRegistry.addShapelessRecipe(new ItemStack(structureSpawner), Item.stick, Block.dirt);
 		LanguageRegistry.addName(structureSpawner, "Structure Spawner");
+		GameRegistry.addShapelessRecipe(new ItemStack(structureSpawner), Item.stick, Block.dirt);
+		GameRegistry.registerItem(structureSpawner, structureSpawner.getUnlocalizedName().substring(5));
 		proxy.registerRenderers();
 		
 		/** WORLD GENERATION: Uncomment out the following line to have structures randomly generate */

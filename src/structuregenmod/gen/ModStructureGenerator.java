@@ -1,5 +1,5 @@
 /**
-    Copyright (C) <2013> <coolAlias>
+    Copyright (C) <2014> <coolAlias>
 
     This file is part of coolAlias' Structure Generation Tool; as such,
     you can redistribute it and/or modify it under the terms of the GNU
@@ -15,7 +15,7 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package coolalias.structuregenmod.gen;
+package structuregenmod.gen;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -28,16 +28,16 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
+import structuregenmod.gen.structures.PortcullisArray;
+import structuregenmod.gen.structures.StructureArrays;
+import structuregenmod.gen.structures.WaterMillArray1;
+import structuregenmod.gen.structures.WaterMillArray2;
+import structuregenmod.gen.structures.WaterMillArray3;
+import structuregenmod.lib.CustomHooks;
 import coolalias.structuregenapi.util.GenHelper;
 import coolalias.structuregenapi.util.LogHelper;
 import coolalias.structuregenapi.util.Structure;
 import coolalias.structuregenapi.util.StructureGeneratorBase;
-import coolalias.structuregenmod.gen.structures.PortcullisArray;
-import coolalias.structuregenmod.gen.structures.StructureArrays;
-import coolalias.structuregenmod.gen.structures.WaterMillArray1;
-import coolalias.structuregenmod.gen.structures.WaterMillArray2;
-import coolalias.structuregenmod.gen.structures.WaterMillArray3;
-import coolalias.structuregenmod.lib.CustomHooks;
 
 public class ModStructureGenerator extends StructureGeneratorBase
 {

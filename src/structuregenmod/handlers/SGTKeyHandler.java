@@ -1,5 +1,5 @@
 /**
-    Copyright (C) <2013> <coolAlias>
+    Copyright (C) <2014> <coolAlias>
 
     This file is part of coolAlias' Structure Generation Tool; as such,
     you can redistribute it and/or modify it under the terms of the GNU
@@ -15,16 +15,15 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package coolalias.structuregenmod.handlers;
+package structuregenmod.handlers;
 
 import java.util.EnumSet;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityClientPlayerMP;
 import net.minecraft.client.settings.KeyBinding;
-import coolalias.structuregenmod.items.ItemStructureSpawnerBase;
-import coolalias.structuregenmod.lib.ModInfo;
-import coolalias.structuregenmod.lib.SGTKeyBindings;
+import structuregenmod.items.ItemStructureSpawnerBase;
+import structuregenmod.lib.ModInfo;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.client.registry.KeyBindingRegistry.KeyHandler;
 import cpw.mods.fml.common.TickType;
@@ -35,31 +34,20 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class SGTKeyHandler extends KeyHandler
 {
 	public static final String label = ModInfo.MOD_NAME + " Key";
-	
-	private EnumSet tickTypes = EnumSet.of(TickType.PLAYER);
 			
-	public SGTKeyHandler(KeyBinding[] keyBindings, boolean[] repeatings) {
-		super(keyBindings, repeatings);
-	}
+	public SGTKeyHandler(KeyBinding[] keys, boolean[] repeat) { super(keys, repeat); }
 
-	public SGTKeyHandler(KeyBinding[] keyBindings) {
-		super(keyBindings);
-	}
+	public SGTKeyHandler(KeyBinding[] keys) { super(keys); }
 
 	@Override
-	public String getLabel() {
-		return this.label;
-	}
+	public String getLabel() { return this.label; }
 
 	@Override
-	public void keyDown(EnumSet<TickType> types, KeyBinding kb, boolean tickEnd, boolean isRepeat)
-	{
-		if (tickEnd && SGTKeyBindings.sgtKeyMap.containsKey(kb.keyCode) && FMLClientHandler.instance().getClient().inGameHasFocus)
-		{
+	public void keyDown(EnumSet<TickType> types, KeyBinding kb, boolean tickEnd, boolean isRepeat) {
+		if (tickEnd && FMLClientHandler.instance().getClient().inGameHasFocus) {
 			EntityClientPlayerMP player = Minecraft.getMinecraft().thePlayer;
-			
 			if (player.getHeldItem() != null && player.getHeldItem().getItem() instanceof ItemStructureSpawnerBase) {
-				SGTPacketHandler.sendPacketKeyPress(SGTKeyBindings.sgtKeyMap.get(kb.keyCode));
+				SGTPacketHandler.sendPacketKeyPress(kb.keyCode);
 			}
 		}
 	}
@@ -68,7 +56,5 @@ public class SGTKeyHandler extends KeyHandler
 	public void keyUp(EnumSet<TickType> types, KeyBinding kb, boolean tickEnd) {}
 
 	@Override
-	public EnumSet<TickType> ticks() {
-		return tickTypes;
-	}
+	public EnumSet<TickType> ticks() { return EnumSet.of(TickType.CLIENT); }
 }

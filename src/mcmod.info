@@ -1,15 +1,15 @@
 [
 {
-  "modid": "StructureGenMod",
-  "name": "Structure Generation Mod",
+  "modid": "structuregenmod",
+  "name": "Structure Generation API Demo Mod",
   "description": "A mod demonstrating the capabilities of coolAlias' Structure Generation API.",
-  "version": "@@MOD_VERSION@@",
-  "mcversion": "@@MC_VERSION@@",
+  "version": "1.6.4-1.1.0",
+  "mcversion": "1.6.4",
   "logoFile": "",
-  "url": "",
+  "url": "http://www.minecraftforum.net/topic/1963371-structure-generation-and-rotation-tool/",
   "updateUrl": "",
   "authors": ["coolAlias"],
-  "credits": "",
+  "credits": "Thanks to Microjunk for spurring this project on",
   "parent": "",
   "screenshots": [],
   "dependencies": []

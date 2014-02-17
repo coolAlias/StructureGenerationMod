@@ -1,5 +1,5 @@
 /**
-    Copyright (C) <2013> <coolAlias>
+    Copyright (C) <2014> <coolAlias>
 
     This file is part of coolAlias' Structure Generation Tool; as such,
     you can redistribute it and/or modify it under the terms of the GNU
@@ -15,7 +15,7 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package coolalias.structuregenmod.items;
+package structuregenmod.items;
 
 import java.util.List;
 import java.util.logging.Level;
@@ -26,10 +26,10 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
+import structuregenmod.gen.ModStructureGenerator;
 import coolalias.structuregenapi.util.LogHelper;
 import coolalias.structuregenapi.util.Structure;
 import coolalias.structuregenapi.util.StructureGeneratorBase;
-import coolalias.structuregenmod.gen.ModStructureGenerator;
 
 public class ItemStructureSpawner extends ItemStructureSpawnerBase
 {
@@ -46,8 +46,9 @@ public class ItemStructureSpawner extends ItemStructureSpawnerBase
 	@Override
 	public boolean onItemUse(ItemStack itemstack, EntityPlayer player, World world, int x, int y, int z, int par7, float par8, float par9, float par10)
 	{
-		if (itemstack.stackTagCompound == null)
+		if (itemstack.stackTagCompound == null) {
 			initNBTCompound(itemstack);
+		}
 
 		if (!world.isRemote && ModStructureGenerator.structures.size() > 0)
 		{
@@ -85,7 +86,6 @@ public class ItemStructureSpawner extends ItemStructureSpawnerBase
 			gen.setStructureWithRotation(structure, getData(itemstack, ROTATIONS));
 			gen.setDefaultOffset(structure.getOffsetX() + getData(itemstack, OFFSET_X), structure.getOffsetY() + getData(itemstack, OFFSET_Y), structure.getOffsetZ() + getData(itemstack, OFFSET_Z));
 			gen.generate(world, world.rand, x, y, z);
-			
 		}
 
 		return true;
@@ -95,8 +95,7 @@ public class ItemStructureSpawner extends ItemStructureSpawnerBase
 	 * Allows items to add custom lines of information to the mouseover description
 	 */
 	@Override
-	public void addInformation(ItemStack itemstack, EntityPlayer player, List list, boolean par4)
-	{
+	public void addInformation(ItemStack itemstack, EntityPlayer player, List list, boolean par4) {
 		String name = (getCurrentStructure(itemstack) != null ? getCurrentStructure(itemstack).name : "None");
 		list.add(EnumChatFormatting.ITALIC + "Current: " + name);
 	}

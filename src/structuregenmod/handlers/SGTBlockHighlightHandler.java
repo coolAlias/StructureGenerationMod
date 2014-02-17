@@ -1,5 +1,5 @@
 /**
-    Copyright (C) <2013> <coolAlias>
+    Copyright (C) <2014> <coolAlias>
 
     This file is part of coolAlias' Structure Generation Tool; as such,
     you can redistribute it and/or modify it under the terms of the GNU
@@ -21,7 +21,7 @@
 	found at https://github.com/pahimar/Equivalent-Exchange-3/blob/master/common/com/pahimar/ee3/core/handlers/DrawBlockHighlightHandler.java
  */
 
-package coolalias.structuregenmod.handlers;
+package structuregenmod.handlers;
 
 import java.util.logging.Level;
 
@@ -34,9 +34,9 @@ import net.minecraftforge.event.ForgeSubscribe;
 
 import org.lwjgl.opengl.GL11;
 
+import structuregenmod.items.ItemStructureSpawnerBase;
 import coolalias.structuregenapi.util.LogHelper;
 import coolalias.structuregenapi.util.Structure;
-import coolalias.structuregenmod.items.ItemStructureSpawnerBase;
 
 public class SGTBlockHighlightHandler
 {

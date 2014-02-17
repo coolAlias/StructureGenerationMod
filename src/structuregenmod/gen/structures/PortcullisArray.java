@@ -1,5 +1,5 @@
 /**
-    Copyright (C) <2013> <coolAlias>
+    Copyright (C) <2014> <coolAlias>
 
     This file is part of coolAlias' Structure Generation Tool; as such,
     you can redistribute it and/or modify it under the terms of the GNU
@@ -17,10 +17,15 @@
     Original design by PearSquirrel: http://www.youtube.com/watch?feature=player_embedded&v=9pG91IfoyAw
  */
 
-package coolalias.structuregenmod.gen.structures;
+package structuregenmod.gen.structures;
 
 import net.minecraft.block.Block;
 
+/**
+ * 
+ * @author credits to PearSquirrel for the original design
+ *
+ */
 public class PortcullisArray
 {
 	private static final int

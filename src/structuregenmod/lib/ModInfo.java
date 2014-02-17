@@ -1,5 +1,5 @@
 /**
-    Copyright (C) <2013> <coolAlias>
+    Copyright (C) <2014> <coolAlias>
 
     This file is part of coolAlias' Structure Generation Tool; as such,
     you can redistribute it and/or modify it under the terms of the GNU
@@ -15,15 +15,16 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package coolalias.structuregenmod.proxy;
+package structuregenmod.lib;
 
-import net.minecraftforge.common.MinecraftForge;
-import coolalias.structuregenmod.handlers.SGTBlockHighlightHandler;
-
-public class ClientProxy extends CommonProxy
+public class ModInfo
 {
-	@Override
-	public void registerRenderers() {
-		MinecraftForge.EVENT_BUS.register(new SGTBlockHighlightHandler());
-	}
+	public static final String
+	MOD_ID = "structuregenmod",
+	MOD_NAME = "Structure Generation Tool",
+	VERSION = "1.1.0",
+	CLIENT_PROXY = "structuregenmod.proxy.ClientProxy",
+	COMMON_PROXY = "structuregenmod.proxy.CommonProxy",
+	CHANNEL = "SGT_MAIN",
+	LOGGER = "STRUCTURE GEN";
 }

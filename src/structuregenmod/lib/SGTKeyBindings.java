@@ -1,5 +1,5 @@
 /**
-    Copyright (C) <2013> <coolAlias>
+    Copyright (C) <2014> <coolAlias>
 
     This file is part of coolAlias' Structure Generation Tool; as such,
     you can redistribute it and/or modify it under the terms of the GNU
@@ -15,17 +15,13 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package coolalias.structuregenmod.lib;
-
-import java.util.HashMap;
-import java.util.Map;
+package structuregenmod.lib;
 
 import net.minecraft.client.settings.KeyBinding;
-import net.minecraftforge.common.Configuration;
 
 import org.lwjgl.input.Keyboard;
 
-import coolalias.structuregenmod.handlers.SGTKeyHandler;
+import structuregenmod.handlers.SGTKeyHandler;
 import cpw.mods.fml.client.registry.KeyBindingRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -50,21 +46,14 @@ public class SGTKeyBindings
 		Keyboard.KEY_RBRACKET, Keyboard.KEY_LBRACKET, Keyboard.KEY_V
 	};
 	
-	/** Maps Keyboard values to SGT KeyBinding values */
-	public static final Map<Integer, Byte> sgtKeyMap = new HashMap<Integer, Byte>();
+	public static final KeyBinding[] keys = new KeyBinding[desc.length];
 	
-	public static void init(Configuration config)
-	{
-		KeyBinding[] key = new KeyBinding[desc.length];
+	public static void init() {
 		boolean[] repeat = new boolean[desc.length];
-		
-		for (int i = 0; i < desc.length; ++i)
-		{
-			key[i] = new KeyBinding(desc[i], config.get(SGTKeyHandler.label, desc[i], keyValues[i]).getInt());
+		for (int i = 0; i < desc.length; ++i) {
+			keys[i] = new KeyBinding(desc[i], keyValues[i]);
 			repeat[i] = false;
-			sgtKeyMap.put(key[i].keyCode, (byte) i);
 		}
-		
-        KeyBindingRegistry.registerKeyBinding(new SGTKeyHandler(key, repeat));
+        KeyBindingRegistry.registerKeyBinding(new SGTKeyHandler(keys, repeat));
 	}
 }
